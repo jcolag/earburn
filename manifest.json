@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Earburn",
+  "version": "1.0",
+  "description": "Identify pages that support IndieWeb Webmentions.",
+  "permissions": [
+    "<all_urls>",
+    "scripting"
+  ],
+  "icons": {
+    "48": "icons/ear-48.png",
+    "96": "icons/ear-96.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "urlrat@example.com"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["earburn.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "earburn-bg.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "icons/ear-96.png"
+  }
+}
