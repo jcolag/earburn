@@ -9,3 +9,14 @@ function checkLinksForWebmention(list) {
 
   return false;
 }
+
+function toggleIconOnWebmention() {
+  const inHead = document.head.querySelectorAll('link[rel]');
+  const inBody = document.body.querySelectorAll('link[rel]');
+
+  if (checkLinksForWebmention(inHead) || checkLinksForWebmention(inBody)) {
+    browser.runtime.sendMessage({ action: 'turnOn' });
+  } else {
+    browser.runtime.sendMessage({ action: 'turnOff' });
+  }
+}
