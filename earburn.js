@@ -20,3 +20,5 @@ function toggleIconOnWebmention() {
     browser.runtime.sendMessage({ action: 'turnOff' });
   }
 }
+
+toggleIconOnWebmention();
