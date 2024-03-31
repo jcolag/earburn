@@ -15,3 +15,12 @@ browser.runtime.onMessage.addListener((message) => {
     });
   }
 });
+browser.tabs.onActivated.addListener((activeInfo) => {
+  browser.tabs.get(activeInfo.tabId)
+    .then((tabId) =>
+      browser.tabs.sendMessage(activeInfo.tabId, { triggerAction: true })
+    )
+      .then((r) => console.log(r))
+      .catch((e) => console.error(e))
+    .catch((e) => console.error(e));
+});

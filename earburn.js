@@ -21,4 +21,10 @@ function toggleIconOnWebmention() {
   }
 }
 
+browser.runtime.onMessage.addListener((message) => {
+  if (message.triggerAction) {
+    toggleIconOnWebmention();
+  }
+});
+
 toggleIconOnWebmention();
