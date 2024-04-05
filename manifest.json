@@ -30,6 +30,8 @@
     "persistent": false
   },
   "browser_action": {
-    "default_icon": "icons/ear-96.png"
+    "default_icon": "icons/ear-96.png",
+    "default_popup": "popup/hcard.html",
+    "default_title": "Earburn"
   }
 }

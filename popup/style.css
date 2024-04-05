@@ -1,0 +1,27 @@
+:root {
+  --bg:  #f9f9fb;
+  --blue: #0060df;
+  --fg: #15141a;
+  --red: #e22850;
+  --violet: #9059ff;
+}
+a {
+  color: var(--blue);
+}
+a:hover {
+  color: var(--red);
+}
+a:visited {
+  color: var(--violet);
+}
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'Segoe UI', 'SF Pro', 'Noto Sans', Cantarell, Ubuntu
+}
+img {
+  max-height: 2em;
+}
+.u-uid {
+  font-style: bold;
+}
