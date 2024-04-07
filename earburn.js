@@ -21,9 +21,12 @@ function toggleIconOnWebmention() {
   }
 }
 
-browser.runtime.onMessage.addListener((message) => {
+browser.runtime.onMessage.addListener((message, sender, reply) => {
   if (message.triggerAction) {
     toggleIconOnWebmention();
+  } else if (message.action === 'h-card') {
+    const hCards = document.body.getElementsByClassName('h-card');
+    reply(hCards[0].outerHTML);
   }
 });
 
