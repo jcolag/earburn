@@ -18,7 +18,10 @@ browser.runtime.onMessage.addListener((message) => {
 browser.tabs.onActivated.addListener((activeInfo) => {
   browser.tabs.get(activeInfo.tabId)
     .then((tabId) =>
-      browser.tabs.sendMessage(activeInfo.tabId, { triggerAction: true })
+      browser.tabs.sendMessage(activeInfo.tabId, {
+        action: 'retry',
+        triggerAction: true,
+      })
     )
       .then((r) => console.log(r))
       .catch((e) => console.error(e))
