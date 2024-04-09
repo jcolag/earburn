@@ -23,7 +23,11 @@ browser.tabs.onActivated.addListener((activeInfo) => {
         triggerAction: true,
       })
     )
-      .then((r) => console.log(r))
+      .then((r) => {
+        if (r) {
+          console.log(r);
+        }
+      })
       .catch((e) => console.error(e))
     .catch((e) => console.error(e));
 });
