@@ -12,13 +12,14 @@ function updateHCard(html) {
   card.style = null;
   c.replaceChildren(card);
 }
+
 window.addEventListener('load', () => {
-  browser.tabs.query({
+  chrome.tabs.query({
     active: true,
     currentWindow: true,
   }, (tabs) => {
     const tabId = tabs[0].id;
-    browser.tabs.sendMessage(tabId, {
+    chrome.tabs.sendMessage(tabId, {
       action: 'h-card',
     }, updateHCard);
   });

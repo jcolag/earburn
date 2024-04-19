@@ -21,7 +21,7 @@ function toggleIconOnWebmention() {
   }
 }
 
-browser.runtime.onMessage.addListener((message, sender, reply) => {
+chrome.runtime.onMessage.addListener((message, sender, reply) => {
   if (message.triggerAction) {
     toggleIconOnWebmention();
   } else if (message.action === 'h-card') {
