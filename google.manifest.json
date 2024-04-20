@@ -4,7 +4,7 @@
   "version": "1.1",
   "description": "Identify pages that support IndieWeb Webmentions.",
   "permissions": [
-    "scripting"
+    "activeTab"
   ],
   "host_permissions": [
     "<all_urls>"
