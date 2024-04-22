@@ -13,11 +13,6 @@
     "48": "icons/ear-48.png",
     "96": "icons/ear-96.png"
   },
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "urlrat@example.com"
-    }
-  },
   "content_scripts": [
     {
       "matches": ["*://*/*"],
@@ -27,10 +22,5 @@
   ],
   "background": {
     "service_worker": "earburn-bg.js"
-  },
-  "browser_action": {
-    "default_icon": "icons/ear-96.png",
-    "default_popup": "popup/hcard.html",
-    "default_title": "Earburn"
   }
 }
